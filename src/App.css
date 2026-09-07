@@ -373,6 +373,15 @@ section {
     text-align: center;
 }
 
+.form-status-error {
+    color: #c0392b;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .contact-direct {
     margin-top: 32px;
     font-size: 15px;

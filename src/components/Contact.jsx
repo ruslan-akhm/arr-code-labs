@@ -1,35 +1,38 @@
 import { useState } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../../firebase";
 
-const CONTACT_EMAIL = "hello@arrcodelabs.com";
+const CONTACT_EMAIL = "inquiries@arrcodelabs.com";
 
 const INITIAL_FORM = { name: "", email: "", company: "", message: "" };
 
 function Contact() {
     const [form, setForm] = useState(INITIAL_FORM);
-    const [sent, setSent] = useState(false);
+    const [status, setStatus] = useState("idle");
 
     function handleChange(event) {
         const { name, value } = event.target;
         setForm((prev) => ({ ...prev, [name]: value }));
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
+        setStatus("sending");
 
-        const subject = `Project inquiry from ${form.name || "your website"}`;
-        const body = [
-            `Name: ${form.name}`,
-            `Email: ${form.email}`,
-            `Company: ${form.company}`,
-            "",
-            form.message,
-        ].join("\n");
-
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-
-        setSent(true);
+        try {
+            await addDoc(collection(db, "contact_submissions"), {
+                Name: form.name,
+                Work_email: form.email,
+                Company: form.company,
+                Project_details: form.message,
+                Submitted_at: serverTimestamp(),
+            });
+            setForm(INITIAL_FORM);
+            setStatus("sent");
+        } catch (error) {
+            console.error("Failed to submit contact form", error);
+            setStatus("error");
+        }
     }
 
     return (
@@ -39,7 +42,7 @@ function Contact() {
                 <h2>Let&rsquo;s discuss your project</h2>
                 <p>
                     Tell us about your identity or engineering challenge and
-                    we&rsquo;ll follow up within one business day.
+                    we&rsquo;ll follow up shortly.
                 </p>
             </div>
 
@@ -91,13 +94,24 @@ function Contact() {
                     />
                 </div>
 
-                <button type="submit" className="btn btn-pill btn-full">
-                    Send message
+                <button
+                    type="submit"
+                    className="btn btn-pill btn-full"
+                    disabled={status === "sending"}
+                >
+                    {status === "sending" ? "Sending\u2026" : "Send message"}
                 </button>
 
-                {sent && (
+                {status === "sent" && (
                     <p className="form-status" role="status">
-                        Opening your email client to send this message&hellip;
+                        Thanks! We&rsquo;ll follow up shortly.
+                    </p>
+                )}
+
+                {status === "error" && (
+                    <p className="form-status form-status-error" role="alert">
+                        Something went wrong. Please email us directly at{" "}
+                        {CONTACT_EMAIL}.
                     </p>
                 )}
             </form>
