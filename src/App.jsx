@@ -1,6 +1,7 @@
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import Services from "./components/Services.jsx";
+import Showcase from "./components/Showcase.jsx";
 import Expertise from "./components/Expertise.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
@@ -13,6 +14,7 @@ function App() {
             <main>
                 <Hero />
                 <Services />
+                <Showcase />
                 <Expertise />
                 <Contact />
             </main>

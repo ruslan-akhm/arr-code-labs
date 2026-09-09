@@ -1,7 +1,7 @@
 const SERVICES = [
     {
         index: "01",
-        title: "Identity Applications",
+        title: "IAM Applications",
         description:
             "Custom portals, administration consoles and identity workflows.",
     },
@@ -17,12 +17,12 @@ const SERVICES = [
         description:
             "Applications integrating with Okta, Microsoft Entra and Ping Identity.",
     },
-    {
-        index: "04",
-        title: "Engineering Augmentation",
-        description:
-            "Experienced frontend/backend engineers for teams that need additional capacity.",
-    },
+    // {
+    //     index: "04",
+    //     title: "Engineering Augmentation",
+    //     description:
+    //         "Experienced frontend/backend engineers for teams that need additional capacity.",
+    // },
 ];
 
 function Services() {

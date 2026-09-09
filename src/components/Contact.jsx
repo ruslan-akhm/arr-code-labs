@@ -2,7 +2,7 @@ import { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 
-const CONTACT_EMAIL = "inquiries@arrcodelabs.com";
+const CONTACT_EMAIL = "support@arrcodelabs.com";
 
 const INITIAL_FORM = { name: "", email: "", company: "", message: "" };
 
