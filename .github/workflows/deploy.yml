@@ -28,9 +28,16 @@ jobs:
 
             - run: npm ci
             - run: npm run build # adjust if you use yarn/pnpm or a different script
+              env:
+                  VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+                  VITE_AUTH_DOMAIN: ${{ secrets.VITE_AUTH_DOMAIN }}
+                  VITE_PROJECT_ID: ${{ secrets.VITE_PROJECT_ID }}
+                  VITE_STORAGE_BUCKET: ${{ secrets.VITE_STORAGE_BUCKET }}
+                  VITE_MESSAGE_SENDER_ID: ${{ secrets.VITE_MESSAGE_SENDER_ID }}
+                  VITE_APP_ID: ${{ secrets.VITE_APP_ID }}
 
             # Ensure your custom domain is preserved after deployment
-            - run: echo "app.yourdomain.com" > ./dist/CNAME # change dist → your output folder
+            - run: echo "arrcodelabs.ca" > ./dist/CNAME # change dist → your output folder
 
             - uses: actions/upload-pages-artifact@v3
               with:
