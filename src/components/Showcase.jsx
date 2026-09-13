@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import dashboard from "../assets/carousel/dashboard.png";
+import c_dashboard from "../assets/carousel/c_dashboard.png";
 import prof_mgm from "../assets/carousel/prof_mgm.png";
 import analysis from "../assets/carousel/analysis.png";
 import workflow from "../assets/carousel/workflow.png";
@@ -16,7 +16,7 @@ const SLIDES = [
         id: 2,
         title: "End-user Identity Portal",
         text: "Self-service identity portal integrated with Okta / Microsoft Entra / Ping ID / Auth0 for end-users to manage their account profile.",
-        image: dashboard,
+        image: c_dashboard,
     },
     {
         id: 3,
