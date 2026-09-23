@@ -487,6 +487,133 @@ section {
     margin-bottom: 20px;
 }
 
+/* ---------- testimonials ---------- */
+
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    /* background: var(--dark); */
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 820px;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .testimonial-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+.testimonial-quote {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-mark {
+    display: block;
+    font-family: "Space Grotesk", var(--sans);
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.testimonial-quote p {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text);
+}
+
+.testimonial-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.testimonial-media {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+}
+
+.testimonial-logo,
+.testimonial-photo {
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-logo {
+    background: #fff;
+    border: 1px solid var(--border);
+}
+
+.testimonial-logo-inner {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-logo-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.testimonial-photo {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+}
+
+.testimonial-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-person {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 24px;
+    text-align: center;
+}
+
+.testimonial-name {
+    font-size: 18px;
+    font-weight: 700;
+    /* color: var(--text); */
+    color: var(--bg-alt);
+}
+
+.testimonial-title {
+    font-size: 14px;
+    color: var(--bg-alt);
+    /* color: var(--text-secondary); */
+    margin-top: 2px;
+}
+
 /* ---------- contact ---------- */
 
 .contact {
