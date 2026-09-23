@@ -7,9 +7,9 @@ const SERVICES = [
     },
     {
         index: "02",
-        title: "Enterprise Frontend",
+        title: "Enterprise Full-Stack",
         description:
-            "Complex React/Next.js applications for security and SaaS products.",
+            "Complex React/Vue/Next.js/Node.js applications for security and SaaS products.",
     },
     {
         index: "03",
