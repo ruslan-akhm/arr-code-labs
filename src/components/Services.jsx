@@ -3,7 +3,7 @@ const SERVICES = [
         index: "01",
         title: "IAM Applications",
         description:
-            "Custom portals, administration consoles and identity workflows.",
+            "Custom portals, dashboards, administration consoles and identity workflows.",
     },
     {
         index: "02",
@@ -15,7 +15,7 @@ const SERVICES = [
         index: "03",
         title: "Identity Integrations",
         description:
-            "Applications integrating with Okta, Microsoft Entra and Ping Identity.",
+            "Applications integrating with Okta, Microsoft Entra, Auth0 and Ping Identity.",
     },
     // {
     //     index: "04",
